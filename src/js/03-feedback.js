@@ -26,7 +26,7 @@ function handleSubmitForm(evt) {
 function handleTakeDataFromForm(evt) {
   formData[evt.target.name] = evt.target.value;
 
-  formDataJson = JSON.stringify(formData);
+  const formDataJson = JSON.stringify(formData);
 
   localStorage.setItem('feedback-form-state', formDataJson);
 }
