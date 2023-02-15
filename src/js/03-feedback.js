@@ -8,7 +8,7 @@ const el = {
 
 startPage();
 
-const formData = {};
+const formData = JSON.parse(localStorage.getItem('feedback-form-state'));
 
 el.form.addEventListener('input', throttle(handleTakeDataFromForm, 500));
 el.form.addEventListener('submit', handleSubmitForm);
