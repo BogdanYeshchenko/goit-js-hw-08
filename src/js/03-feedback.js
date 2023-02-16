@@ -15,19 +15,15 @@ el.form.addEventListener('submit', handleSubmitForm);
 
 function handleSubmitForm(evt) {
   evt.preventDefault();
-
-  console.log(formData);
-
   localStorage.removeItem('feedback-form-state');
-
+  delete formData.email;
+  delete formData.message;
   evt.currentTarget.reset();
 }
 
 function handleTakeDataFromForm(evt) {
   formData[evt.target.name] = evt.target.value;
-
   const formDataJson = JSON.stringify(formData);
-
   localStorage.setItem('feedback-form-state', formDataJson);
 }
 
